@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1757022819 source:/home/adriellymd/tp1/hotel_manager/main.cpp
+	<iostream>
+	"dominios.hpp"
+
+1757022718 /home/adriellymd/tp1/hotel_manager/dominios.hpp
+

@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1757279022 source:/home/adriellymd/tp1/hotel_manager/main.cpp
-	<bits/stdc++.h>
+1757289037 source:/home/adriellymd/tp1/hotel_manager/main.cpp
+	<iostream>
 	"dominios.hpp"
 
-1757279105 /home/adriellymd/tp1/hotel_manager/dominios.hpp
+1757289019 /home/adriellymd/tp1/hotel_manager/dominios.hpp
 	<bits/stdc++.h>
 
-1757279101 source:/home/adriellymd/tp1/hotel_manager/dominios.cpp
+1757289047 source:/home/adriellymd/tp1/hotel_manager/dominios.cpp
 	<bits/stdc++.h>
 	"dominios.hpp"
 

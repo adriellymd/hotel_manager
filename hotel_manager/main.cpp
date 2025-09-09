@@ -24,5 +24,13 @@ int main() {
     try {Senha s2("aB11!"); cout << "Senha criada: " << s2.get_senha() << endl;}
     catch (const invalid_argument &e) {cerr << "Erro s2: " << e.what() << endl;}
 
+    // -------- Email --------
+    try {Email e1("usuario-valido@dominio.com"); cout << "Email criado: " << e1.get_email() << endl;}
+    catch (const invalid_argument &e) {cerr << "Erro e1: " << e.what() << endl;}
+
+    try {Email e2("..invalido@dominio"); cout << "Email criado: " << e2.get_email() << endl;}
+    catch (const invalid_argument &e) {cerr << "Erro e2: " << e.what() << endl;}
+
+
     return 0;
 }

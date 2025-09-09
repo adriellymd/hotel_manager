@@ -101,3 +101,71 @@ bool Senha::regras(const string &s) const {
 
     return true;
 }
+
+// -------- Email --------
+Email::Email(string s) {
+    def_email(s);
+}
+
+void Email::def_email(string s) {
+    if(!validar(s)) throw invalid_argument("Email invalido");
+    email = s;
+}
+
+string Email::get_email() const {
+    return email;
+}
+
+bool Email::validar(const string &s) const {
+    if((int)s.size() > 320) return 0;
+
+    size_t id = s.find('@');
+    if(id == string::npos || id != s.rfind('@')) return 0;
+
+    string local = s.substr(0, id), dom = s.substr(id + 1);
+
+    if(local.empty() || (int)local.size() > 64) return 0;
+    if(local.front() == '.' || local.front() == '-' || local.back() == '.' || local.back() == '-') return 0;
+
+    // local
+    for(int i = 0; i < (int)local.size(); i++) {
+        char c = local[i];
+
+        if(!(isalpha(c) || isdigit(c) || c == '.' || c == '-')) return 0;
+
+        if(c == '.' || c == '-') {
+            if(i+1 < (int)local.size()) {
+                char nextC = local[i+1];
+                if(nextC == '.' || nextC == '-') return 0;
+            }
+        }
+    }
+
+    // domínio
+    if(dom.empty() || (int)dom.size() > 255) return 0;
+
+    int j = 0;
+    for(int i = 0; i <= (int)dom.size(); i++) {
+        if(i == (int)dom.size() || dom[i] == '.') {
+            string cur = dom.substr(j, i - j);
+
+            if(cur.empty()) return 0;
+            if(cur.front() == '-' || cur.back() == '-') return 0;
+            for(char c : cur) {
+                if(!(isalpha(c) || isdigit(c) || c == '-')) return 0;
+            }
+
+            j = i+1;
+        }
+    }
+
+    return 1;
+}
+
+
+
+
+
+
+
+

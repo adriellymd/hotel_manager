@@ -89,13 +89,13 @@ class Nome
  */
 class Ramal
 {
-private:
-    int ramal;                 /**< valor do ramal */
-    void validar(int r) const; /**< valida intervalo do ramal */
-public:
-    Ramal(int r);          /**< construtor valida e armazena */
-    void def_ramal(int r); /**< define o ramal */
-    int get_ramal() const; /**< retorna o ramal */
+    private:
+        int ramal;                 /**< valor do ramal */
+        void validar(int r) const; /**< valida intervalo do ramal */
+    public:
+        Ramal(int r);          /**< construtor valida e armazena */
+        void def_ramal(int r); /**< define o ramal */
+        int get_ramal() const; /**< retorna o ramal */
 };
 
 /**
@@ -104,13 +104,13 @@ public:
  */
 class Numero
 {
-private:
-    int numero;                /**< valor do número */
-    void validar(int n) const; /**< valida intervalo do número */
-public:
-    Numero(int n);          /**< construtor valida e armazena */
-    void def_numero(int n); /**< define o número */
-    int get_numero() const; /**< retorna o número */
+    private:
+        int numero;                /**< valor do número */
+        void validar(int n) const; /**< valida intervalo do número */
+    public:
+        Numero(int n);          /**< construtor valida e armazena */
+        void def_numero(int n); /**< define o número */
+        int get_numero() const; /**< retorna o número */
 };
 
 #endif // DOMINIOS_HPP_INCLUDED

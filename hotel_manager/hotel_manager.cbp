@@ -32,7 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="dominios.cpp" />
+		<Unit filename="dominios.hpp" />
+		<Unit filename="hotel_manager" />
+		<Unit filename="hotel_manager.cbp" />
+		<Unit filename="hotel_manager.depend" />
+		<Unit filename="hotel_manager.layout" />
 		<Unit filename="main.cpp" />
+		<Unit filename="run" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

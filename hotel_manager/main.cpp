@@ -122,7 +122,7 @@ int main()
 
     try
     {
-        Ramal r2(35);
+        Ramal r2(60);
         cout << "Ramal criado: " << r2.get_ramal() << endl;
     }
     catch (const invalid_argument &e)

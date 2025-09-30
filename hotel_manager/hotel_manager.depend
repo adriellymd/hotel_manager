@@ -17,3 +17,7 @@
 1759238763 c:\users\willi\downloads\hotel_manager\hotel_manager\dominios.hpp
 	<bits/stdc++.h>
 
+1759239501 source:c:\users\willi\downloads\hotel_manager\hotel_manager\dominios.cpp
+	<bits/stdc++.h>
+	"dominios.hpp"
+

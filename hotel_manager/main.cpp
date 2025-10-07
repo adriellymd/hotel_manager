@@ -1,5 +1,6 @@
 #include <iostream>
 #include "dominios.hpp"
+#include "entidades.hpp"
 using namespace std;
 
 int main()
@@ -26,8 +27,7 @@ int main()
     catch (const invalid_argument &e){cerr << "Erro s2: " << e.what() << endl;}
 
     // -------- Email --------
-    try
-    {Email e1("usuario-valido@dominio.com");cout << "Email criado: " << e1.get_email() << endl;}
+    try{Email e1("usuario-valido@dominio.com");cout << "Email criado: " << e1.get_email() << endl;}
     catch (const invalid_argument &e){cerr << "Erro e1: " << e.what() << endl;}
 
     try{Email e2("..invalido@dominio");cout << "Email criado: " << e2.get_email() << endl;}
@@ -53,6 +53,17 @@ int main()
 
     try{Numero num2(1000);cout << "Numero criado: " << num2.get_numero() << endl;}
     catch (const invalid_argument &e){cerr << "Erro num2: " << e.what() << endl;}
+
+
+    // ENTIDADES -------------------------------------------------------------------------------------
+
+    try{
+        Nome n1("Fulano");
+        Email e1("fulano@email.com");
+        Pessoa p1(n1, e1);
+        cout << "Pessoa criada: " << p1.get_nome().get_nome() << ", " << p1.get_email().get_email() << "\n";
+    }
+    catch (const invalid_argument &e){cerr << "Pessoa inválida: " << e.what() << endl;}
 
     return 0;
 }

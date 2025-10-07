@@ -4,10 +4,10 @@ using namespace std;
 
 // -------- Capacidade --------
 Capacidade::Capacidade(int v) {
-    def_capacidade(v);
+    set_capacidade(v);
 }
 
-void Capacidade::def_capacidade(int v) {
+void Capacidade::set_capacidade(int v) {
     if(v < 1 || v > 4) {
         throw std::invalid_argument("Capacidade deve ser 1, 2, 3 ou 4.");
     }
@@ -20,10 +20,10 @@ int Capacidade::get_capacidade() const {
 
 // -------- Cartao --------
 Cartao::Cartao(string n) {
-    def_cartao(n);
+    set_cartao(n);
 }
 
-void Cartao::def_cartao(string n) {
+void Cartao::set_cartao(string n) {
     if(n.size() != 16) {
         throw invalid_argument("Cartao deve ter exatamente 16 digitos.");
     }
@@ -58,10 +58,10 @@ bool Cartao::luhn(const string &num) const {
 
 // -------- Senha --------
 Senha::Senha(string s) {
-    def_senha(s);
+    set_senha(s);
 }
 
-void Senha::def_senha(string s) {
+void Senha::set_senha(string s) {
     if(!regras(s)) throw invalid_argument("Senha invalida");
     senha = s;
 }
@@ -105,10 +105,10 @@ bool Senha::regras(const string &s) const {
 
 // -------- Email --------
 Email::Email(string s) {
-    def_email(s);
+    set_email(s);
 }
 
-void Email::def_email(string s) {
+void Email::set_email(string s) {
     if(!validar(s)) throw invalid_argument("Email invalido");
     email = s;
 }
@@ -156,7 +156,7 @@ bool Email::validar(const string &s) const {
 
 // -------- Nome --------
 Nome::Nome(string n) {
-    def_nome(n);
+    set_nome(n);
 }
 
 void Nome::validar(const string &n) const {
@@ -184,7 +184,7 @@ void Nome::validar(const string &n) const {
     }
 }
 
-void Nome::def_nome(string n) {
+void Nome::set_nome(string n) {
     validar(n);
     nome = n;
 }
@@ -195,7 +195,7 @@ string Nome::get_nome() const {
 
 // -------- Ramal --------
 Ramal::Ramal(int r) {
-    def_ramal(r);
+    set_ramal(r);
 }
 
 void Ramal::validar(int r) const {
@@ -204,7 +204,7 @@ void Ramal::validar(int r) const {
     }
 }
 
-void Ramal::def_ramal(int r) {
+void Ramal::set_ramal(int r) {
     validar(r);
     ramal = r;
 }
@@ -215,7 +215,7 @@ int Ramal::get_ramal() const {
 
 // -------- Numero --------
 Numero::Numero(int n) {
-    def_numero(n);
+    set_numero(n);
 }
 
 void Numero::validar(int n) const {
@@ -224,7 +224,7 @@ void Numero::validar(int n) const {
     }
 }
 
-void Numero::def_numero(int n) {
+void Numero::set_numero(int n) {
     validar(n);
     numero = n;
 }

@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.hpp" />
+		<Unit filename="entidades.hpp" />
 		<Unit filename="hotel_manager" />
 		<Unit filename="hotel_manager.cbp" />
 		<Unit filename="hotel_manager.depend" />

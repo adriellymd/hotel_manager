@@ -23,6 +23,20 @@ Cartao::Cartao(string n) {
     set_cartao(n);
 }
 
+bool Cartao::luhn(const string &num) const {
+    int soma = 0, alternar = 0;
+    for(int i = num.size() - 1; i >= 0; i--) {
+        int digito = num[i] - '0';
+        if(alternar) {
+            digito *= 2;
+            if(digito > 9) digito -= 9;
+        }
+        soma += digito;
+        alternar = !alternar;
+    }
+    return (soma % 10 == 0);
+}
+
 void Cartao::set_cartao(string n) {
     if(n.size() != 16) {
         throw invalid_argument("Cartao deve ter exatamente 16 digitos.");
@@ -42,35 +56,12 @@ string Cartao::get_cartao() const {
     return cartao;
 }
 
-bool Cartao::luhn(const string &num) const {
-    int soma = 0, alternar = 0;
-    for(int i = num.size() - 1; i >= 0; i--) {
-        int digito = num[i] - '0';
-        if(alternar) {
-            digito *= 2;
-            if(digito > 9) digito -= 9;
-        }
-        soma += digito;
-        alternar = !alternar;
-    }
-    return (soma % 10 == 0);
-}
-
 // -------- Senha --------
 Senha::Senha(string s) {
     set_senha(s);
 }
 
-void Senha::set_senha(string s) {
-    if(!regras(s)) throw invalid_argument("Senha invalida");
-    senha = s;
-}
-
-string Senha::get_senha() const {
-    return senha;
-}
-
-bool Senha::regras(const string &s) const {
+bool Senha::validar(const string &s) const {
     if(s.size() != 5)
         throw invalid_argument("Senha deve ter exatamente 5 caracteres.");
 
@@ -103,9 +94,56 @@ bool Senha::regras(const string &s) const {
     return true;
 }
 
+void Senha::set_senha(string s) {
+    if(!validar(s)) throw invalid_argument("Senha invalida");
+    senha = s;
+}
+
+string Senha::get_senha() const {
+    return senha;
+}
+
 // -------- Email --------
 Email::Email(string s) {
     set_email(s);
+}
+
+bool Email::validar(const string &s) const {
+    if((int)s.size() > 320) throw invalid_argument("Email excede 320 caracteres.");
+
+    size_t id = s.find('@');
+    if(id != s.rfind('@')) throw invalid_argument("Email nao pode conter mais de um '@'.");
+    if(id == string::npos) throw invalid_argument("Email deve conter '@'.");
+
+    string local = s.substr(0, id), dom = s.substr(id + 1);
+
+    if(local.empty() || (int)local.size() > 64) throw invalid_argument("Parte local invalida.");
+    if(local.front() == '.' || local.front() == '-' || local.back() == '.' || local.back() == '-') throw invalid_argument("Parte local nao pode comecar ou terminar com '.' ou '-'.");
+
+    for(int i = 0; i < (int)local.size(); i++) {
+        char c = local[i];
+        if(!(isalpha(c) || isdigit(c) || c == '.' || c == '-')) throw invalid_argument("Parte local contem caractere invalido.");
+        if((c == '.' || c == '-') && (i+1 < (int)local.size())) {
+            char nextC = local[i+1];
+            if(nextC == '.' || nextC == '-') throw invalid_argument("Parte local contem '.' ou '-' consecutivos.");
+        }
+    }
+
+    if(dom.empty() || (int)dom.size() > 255) throw invalid_argument("Dominio invalido.");
+
+    int j = 0;
+    for(int i = 0; i <= (int)dom.size(); i++) {
+        if(i == (int)dom.size() || dom[i] == '.') {
+            string cur = dom.substr(j, i - j);
+            if(cur.empty()) throw invalid_argument("Dominio contem pontos consecutivos.");
+            if(cur.front() == '-' || cur.back() == '-') throw invalid_argument("Segmento do dominio nao pode comecar ou terminar com '-'.");
+            for(char c : cur) {
+                if(!(isalpha(c) || isdigit(c) || c == '-')) throw invalid_argument("Dominio contem caractere invalido.");
+            }
+            j = i+1;
+        }
+    }
+    return true;
 }
 
 void Email::set_email(string s) {
@@ -115,43 +153,6 @@ void Email::set_email(string s) {
 
 string Email::get_email() const {
     return email;
-}
-
-bool Email::validar(const string &s) const {
-    if((int)s.size() > 320) return 0;
-
-    size_t id = s.find('@');
-    if(id == string::npos || id != s.rfind('@')) return 0;
-
-    string local = s.substr(0, id), dom = s.substr(id + 1);
-
-    if(local.empty() || (int)local.size() > 64) return 0;
-    if(local.front() == '.' || local.front() == '-' || local.back() == '.' || local.back() == '-') return 0;
-
-    for(int i = 0; i < (int)local.size(); i++) {
-        char c = local[i];
-        if(!(isalpha(c) || isdigit(c) || c == '.' || c == '-')) return 0;
-        if((c == '.' || c == '-') && (i+1 < (int)local.size())) {
-            char nextC = local[i+1];
-            if(nextC == '.' || nextC == '-') return 0;
-        }
-    }
-
-    if(dom.empty() || (int)dom.size() > 255) return 0;
-
-    int j = 0;
-    for(int i = 0; i <= (int)dom.size(); i++) {
-        if(i == (int)dom.size() || dom[i] == '.') {
-            string cur = dom.substr(j, i - j);
-            if(cur.empty()) return 0;
-            if(cur.front() == '-' || cur.back() == '-') return 0;
-            for(char c : cur) {
-                if(!(isalpha(c) || isdigit(c) || c == '-')) return 0;
-            }
-            j = i+1;
-        }
-    }
-    return 1;
 }
 
 // -------- Nome --------

@@ -43,7 +43,7 @@ class Cartao {
 class Senha {
     private:
         string senha; /**< senha */
-        bool regras(const string &s) const; /**< verifica regras da senha */
+        bool validar(const string &s) const; /**< verifica regras da senha */
     public:
         Senha(string s); /**< construtor valida e armazena */
         void set_senha(string s); /**< define valor e valida */
@@ -57,11 +57,11 @@ class Senha {
 class Email {
     private:
         string email; /**< email */
+        bool validar(const string &s) const; /**< verifica regras do email */
     public:
         Email(string s); /**< construtor valida e armazena */
         void set_email(string s); /**< define valor e valida */
         string get_email() const; /**< retorna o email */
-        bool validar(const string &s) const; /**< verifica regras do email */
 };
 
 /**
@@ -79,7 +79,7 @@ class Nome {
 };
 
 /**
- * @class Ramal
+ * @class ramal
  * @brief representa um ramal valido (00 a 50).
  */
 class Ramal{
@@ -93,7 +93,7 @@ class Ramal{
 };
 
 /**
- * @class Numero
+ * @class numero
  * @brief representa um número valido (001 a 999).
  */
 class Numero {

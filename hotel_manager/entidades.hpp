@@ -21,4 +21,22 @@ public:
     Email get_email() const; /**< retorna o email */
 };
 
+/**
+ * @class gerente
+ * @brief representa um gerente do sistema.
+ */
+class Gerente {
+private:
+    Ramal ramal; /**< ramal do gerente */
+    Senha senha; /**< senha do gerente */
+public:
+    Gerente() = default;
+    Gerente(const Ramal &r, const Senha &s); /**< construtor com atributos */
+
+    void set_ramal(const Ramal &r); /**< define o ramal */
+    Ramal get_ramal() const; /**< retorna o ramal */
+    void set_senha(const Senha &s); /**< define a senha */
+    Senha get_senha() const; /**< retorna a senha */
+};
+
 #endif // ENTIDADES_HPP_INCLUDED

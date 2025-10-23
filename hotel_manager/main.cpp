@@ -54,6 +54,22 @@ int main()
     try{Numero num2(1000);cout << "Numero criado: " << num2.get_numero() << endl;}
     catch (const invalid_argument &e){cerr << "Erro num2: " << e.what() << endl;}
 
+    // -------- Endereco --------
+    try {
+        Endereco end1("Rua das Flores, 123");
+        cout << "Endereco criado: " << end1.get_endereco() << endl;
+    } catch (const invalid_argument &e) {
+        cerr << "Erro end1: " << e.what() << endl;
+    }
+
+    // -------- Data --------
+    try {
+        Data data1("15-MAR-2024");
+        cout << "Data criada: " << data1.get_data() << endl;
+    } catch (const invalid_argument &e) {
+        cerr << "Erro data1: " << e.what() << endl;
+    }
+
 
     // ENTIDADES -------------------------------------------------------------------------------------
 

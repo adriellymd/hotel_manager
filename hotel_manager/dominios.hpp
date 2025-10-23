@@ -106,4 +106,34 @@ class Numero {
         int get_numero() const; /**< retorna o número */
 };
 
+/**
+ * @class Endereco
+ * @brief Representa um endereço válido conforme regras específicas.
+ */
+class Endereco {
+    private:
+        string endereco; /**< valor do endereço armazenado */
+        void validar(const string &e) const; /**< método de validação interno */
+    public:
+        Endereco(string e); /**< construtor que valida e armazena */
+        void set_endereco(string e); /**< define o endereço com validação */
+        string get_endereco() const; /**< retorna o endereço */
+};
+
+/**
+ * @class Data  
+ * @brief Representa uma data válida no formato DD-MMM-AAAA.
+ */
+
+class Data {
+    private:
+        string data; /**< valor da data armazenado */
+        void validar(const string &d) const; /**< método de validação interno */
+        bool ehBissexto(int ano) const; /**< verifica se ano é bissexto */
+    public:
+        Data(string d); /**< construtor que valida e armazena */
+        void set_data(string d); /**< define a data com validação */
+        string get_data() const; /**< retorna a data */
+};
+
 #endif // DOMINIOS_HPP_INCLUDED

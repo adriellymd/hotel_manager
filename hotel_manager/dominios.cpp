@@ -234,6 +234,116 @@ int Numero::get_numero() const {
     return numero;
 }
 
+// -------- Endereco --------
+Endereco::Endereco(string e) {
+    set_endereco(e);
+}
+
+void Endereco::validar(const string &e) const {
+    // Verifica tamanho
+    if (e.size() < 5 || e.size() > 30) {
+        throw invalid_argument("Endereco deve ter entre 5 e 30 caracteres.");
+    }
+    char primeiro = e[0];
+    char ultimo = e[e.size() - 1];
+    if (primeiro == ',' || primeiro == '.' || primeiro == ' ' ||
+        ultimo == ',' || ultimo == '.' || ultimo == ' ') {
+        throw invalid_argument("Endereco nao pode comecar ou terminar com virgula, ponto ou espaco.");
+    }
+    for (size_t i = 0; i < e.size(); i++) {
+        char c = e[i];
+        
+        if (!(isalnum(c) || c == ',' || c == '.' || c == ' ')) {
+            throw invalid_argument("Endereco contem caractere invalido.");
+        }
+        if (i < e.size() - 1) {
+            char next = e[i + 1];
+            
+            if (c == ',' && (next == ',' || next == '.')) {
+                throw invalid_argument("Virgula nao pode ser seguida por virgula ou ponto.");
+            }
+            if (c == '.' && (next == ',' || next == '.')) {
+                throw invalid_argument("Ponto nao pode ser seguido por virgula ou ponto.");
+            }
+            if (c == ' ' && !isalnum(next)) {
+                throw invalid_argument("Espaco em branco deve ser seguido por letra ou digito.");
+            }
+        }
+    }
+}
+void Endereco::set_endereco(string e) {
+    validar(e);
+    endereco = e;
+}
+string Endereco::get_endereco() const {
+    return endereco;
+}
+
+// -------- Data --------
+Data::Data(string d) {
+    set_data(d);
+}
+bool Data::ehBissexto(int ano) const {
+    return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+}
+void Data::validar(const string &d) const {
+    if (d.size() != 11) {
+        throw invalid_argument("Data deve estar no formato DD-MMM-AAAA (11 caracteres).");
+    }
+    if (d[2] != '-' || d[6] != '-') {
+        throw invalid_argument("Data deve usar hifens como separadores (DD-MMM-AAAA).");
+    }
+    string dia_str = d.substr(0, 2);
+    string mes_str = d.substr(3, 3);
+    string ano_str = d.substr(7, 4);
+    
+    int dia;
+    try {
+        dia = stoi(dia_str);
+    } catch (...) {
+        throw invalid_argument("Dia da data deve ser um numero.");
+    }
+    int ano;
+    try {
+        ano = stoi(ano_str);
+    } catch (...) {
+        throw invalid_argument("Ano da data deve ser um numero.");
+    }
+    if (ano < 2000 || ano > 2999) {
+        throw invalid_argument("Ano deve estar entre 2000 e 2999.");
+    }
+    vector<string> meses_validos = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", 
+                                   "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
+    string mes_upper = mes_str;
+    transform(mes_upper.begin(), mes_upper.end(), mes_upper.begin(), ::toupper);
+    
+    auto it = find(meses_validos.begin(), meses_validos.end(), mes_upper);
+    if (it == meses_validos.end()) {
+        throw invalid_argument("Mes invalido. Use: JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ.");
+    }
+    int mes_index = distance(meses_validos.begin(), it) + 1;
+    
+    vector<int> dias_por_mes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    
+    if (mes_index == 2 && ehBissexto(ano)) {
+        dias_por_mes[1] = 29;
+    }
+    if (dia < 1 || dia > dias_por_mes[mes_index - 1]) {
+        throw invalid_argument("Dia invalido para o mes especificado.");
+    }
+    if (mes_str != mes_upper) {
+        throw invalid_argument("Mes deve estar em letras maiusculas.");
+    }
+}
+
+void Data::set_data(string d) {
+    validar(d);
+    data = d;
+}
+
+string Data::get_data() const {
+    return data;
+}
 
 
 

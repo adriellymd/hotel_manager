@@ -19,7 +19,6 @@
 #include "entidades.hpp"
 
 // g++ main_gui.cpp ../entidades.cpp ../dominios.cpp -I.. -o cadastro $(pkg-config --cflags --libs Qt6Widgets)
-// ./cadastro
 // GUI de teste
 
 int main(int argc, char *argv[]) {

@@ -252,13 +252,13 @@ void Endereco::validar(const string &e) const {
     }
     for (size_t i = 0; i < e.size(); i++) {
         char c = e[i];
-        
+
         if (!(isalnum(c) || c == ',' || c == '.' || c == ' ')) {
             throw invalid_argument("Endereco contem caractere invalido.");
         }
         if (i < e.size() - 1) {
             char next = e[i + 1];
-            
+
             if (c == ',' && (next == ',' || next == '.')) {
                 throw invalid_argument("Virgula nao pode ser seguida por virgula ou ponto.");
             }
@@ -296,7 +296,7 @@ void Data::validar(const string &d) const {
     string dia_str = d.substr(0, 2);
     string mes_str = d.substr(3, 3);
     string ano_str = d.substr(7, 4);
-    
+
     int dia;
     try {
         dia = stoi(dia_str);
@@ -312,19 +312,19 @@ void Data::validar(const string &d) const {
     if (ano < 2000 || ano > 2999) {
         throw invalid_argument("Ano deve estar entre 2000 e 2999.");
     }
-    vector<string> meses_validos = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", 
+    vector<string> meses_validos = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN",
                                    "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     string mes_upper = mes_str;
     transform(mes_upper.begin(), mes_upper.end(), mes_upper.begin(), ::toupper);
-    
+
     auto it = find(meses_validos.begin(), meses_validos.end(), mes_upper);
     if (it == meses_validos.end()) {
         throw invalid_argument("Mes invalido. Use: JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ.");
     }
     int mes_index = distance(meses_validos.begin(), it) + 1;
-    
+
     vector<int> dias_por_mes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    
+
     if (mes_index == 2 && ehBissexto(ano)) {
         dias_por_mes[1] = 29;
     }
@@ -345,11 +345,120 @@ string Data::get_data() const {
     return data;
 }
 
+// -------- Telefone --------
+Telefone::Telefone(string t) {
+    set_telefone(t);
+}
 
+bool Telefone::validar(string t) {
+    if(t[0] != '+') {
+        throw invalid_argument("Telefone invalido. Deve comecar com +.");
+    }
 
+    if(t.size() != 15) {
+        throw invalid_argument("Telefone invalido. Deve conter exatamente 14 digitos alem do simbolo +.");
+    }
 
+    for(int i = 1; i < t.size(); i++) {
+        if(!isdigit(t[i])) {
+            throw invalid_argument("Telefone invalido. Deve conter apenas numeros apos o simbolo +.");
+        }
+    }
 
+    return true;
 
+}
 
+void Telefone::set_telefone(string t) {
+    validar(t);
+    telefone = t;
+}
 
+string Telefone::get_telefone() {
+    return telefone;
+}
 
+// -------- Dinheiro --------
+Dinheiro::Dinheiro(string d) {
+    set_dinheiro(d);
+}
+
+bool Dinheiro::validar(string d) {
+    string string_int = "";
+    int parte_inteira;
+
+    for(int i = 0; i < d.size(); i++) {
+        if(isdigit(d[i])) {
+            string_int += d[i];
+        } else {
+            if(d[i] != ',') {
+                throw invalid_argument("Dinheiro invalido. Digite apenas numeros. Use uma virgula para os centavos");
+            }
+        }
+
+        if(d[i] == ',') {
+            if(string_int == "") {
+                throw invalid_argument("Dinheiro invalido. Deve conter pelo menos um digito antes da virgula (o digito pode ser 0).");
+            }
+
+            int parte_inteira = stoi(string_int);
+
+            if(parte_inteira > 1000000) {
+                throw invalid_argument("Dinheiro invalido. Nao deve ultrapassar um milhao.");
+            }
+
+            break;
+        }
+    }
+
+    if(d[d.size()-3] != ',') {
+        throw invalid_argument("Dinheiro invalido. Use duas casas decimais.");
+    } else {
+        if(parte_inteira == 1000000) {
+            if(d[d.size()-2] != '0' or d[d.size()-1] != '0') {
+                throw invalid_argument("Dinheiro invalido. Nao deve ultrapassar um milhao.");
+            }
+        }
+    }
+
+    return true;
+
+}
+
+void Dinheiro::set_dinheiro(string d) {
+    validar(d);
+    d[d.size()-3] = '.';
+    int dinheiro = stof(d) * 100;
+}
+
+int Dinheiro::get_dinheiro {
+    return dinheiro;
+}
+
+// -------- Código --------
+Codigo::Codigo(string c) {
+    set_codigo(c);
+}
+
+bool Codigo::validar(string c) {
+    for(int i = 0; i < c.size(); i++) {
+        if(!isdigit(c[i]) or !islower(c[i])) {
+            throw invalid_argument("Codigo invalido. Deve conter apenas numeros ou letras minusculas.");
+        }
+    }
+
+    if(c.size() != 10) {
+        throw invalid_argument("Codigo invalido. Deve conter exatamente 10 caracteres.");
+    }
+
+    return true;
+}
+
+void Codigo::set_codigo(string c) {
+    validar(c);
+    codigo = c;
+}
+
+string Codigo::get_codigo {
+    return codigo;
+}

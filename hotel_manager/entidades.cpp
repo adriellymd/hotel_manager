@@ -45,3 +45,56 @@ Dinheiro Quarto::get_diaria() const {return diaria;}
 
 void Quarto::set_ramal(const Ramal &r) {ramal = r;}
 Ramal Quarto::get_ramal() const {return ramal;}
+
+// -------- Reserva --------
+Reserva::Reserva(const Codigo &cod, const Data &in, const Data &out, 
+                 const Pessoa &hosp, const Quarto &quart, const Dinheiro &valor)
+    : codigo(cod), check_in(in), check_out(out), hospede(hosp), quarto(quart), valor_total(valor) {}
+
+void Reserva::set_codigo(const Codigo &cod) {
+    codigo = cod;
+}
+
+Codigo Reserva::get_codigo() const {
+    return codigo;
+}
+
+void Reserva::set_check_in(const Data &in) {
+    check_in = in;
+}
+
+Data Reserva::get_check_in() const {
+    return check_in;
+}
+
+void Reserva::set_check_out(const Data &out) {
+    check_out = out;
+}
+
+Data Reserva::get_check_out() const {
+    return check_out;
+}
+
+void Reserva::set_hospede(const Pessoa &hosp) {
+    hospede = hosp;
+}
+
+Pessoa Reserva::get_hospede() const {
+    return hospede;
+}
+
+void Reserva::set_quarto(const Quarto &quart) {
+    quarto = quart;
+}
+
+Quarto Reserva::get_quarto() const {
+    return quarto;
+}
+
+void Reserva::set_valor_total(const Dinheiro &valor) {
+    valor_total = valor;
+}
+
+Dinheiro Reserva::get_valor_total() const {
+    return valor_total;
+}

@@ -82,3 +82,62 @@ int main()
 
     return 0;
 }
+
+cout << "\n=== TESTE RESERVA ===" << endl;
+try {
+    // Criar domínios para a reserva
+    Codigo codigoReserva("abc123def4"); // 10 caracteres alfanuméricos
+    Data checkin("15-MAR-2024");
+    Data checkout("20-MAR-2024");
+    
+    // Criar hóspede
+    Nome nomeHospede("Joao Silva");
+    Email emailHospede("joao@email.com");
+    Pessoa hospede(nomeHospede, emailHospede);
+    
+    // Criar quarto
+    Numero numeroQuarto(101);
+    Capacidade capQuarto(2);
+    Dinheiro diaria("150,00"); // Formato string
+    Ramal ramalQuarto(25);
+    Quarto quarto(numeroQuarto, capQuarto, diaria, ramalQuarto);
+    
+    // Criar valor total da reserva (5 diárias)
+    Dinheiro valorTotal("750,00");
+    
+    // Criar reserva
+    Reserva reserva(codigoReserva, checkin, checkout, hospede, quarto, valorTotal);
+    
+    cout << "✅ Reserva criada com sucesso!" << endl;
+    cout << "Código: " << reserva.get_codigo().get_codigo() << endl;
+    cout << "Check-in: " << reserva.get_check_in().get_data() << endl;
+    cout << "Check-out: " << reserva.get_check_out().get_data() << endl;
+    cout << "Hóspede: " << reserva.get_hospede().get_nome().get_nome() << endl;
+    cout << "Quarto: " << reserva.get_quarto().get_numero().get_numero() << endl;
+    cout << "Valor total: " << reserva.get_valor_total().get_dinheiro() << " centavos" << endl;
+    
+} catch (const invalid_argument &e) {
+    cerr << "❌ Erro na reserva: " << e.what() << endl;
+}
+
+// -------- Teste Reserva Inválida --------
+try {
+    Codigo codigoInvalido("ABC!23DEF4"); // Caractere especial inválido
+    Data checkin("15-MAR-2024");
+    Data checkout("20-MAR-2024");
+    Nome nomeHospede("Maria Santos");
+    Email emailHospede("maria@email.com");
+    Pessoa hospede(nomeHospede, emailHospede);
+    Numero numeroQuarto(102);
+    Capacidade capQuarto(3);
+    Dinheiro diaria("200,00");
+    Ramal ramalQuarto(30);
+    Quarto quarto(numeroQuarto, capQuarto, diaria, ramalQuarto);
+    Dinheiro valorTotal("1000,00");
+    
+    Reserva reservaInvalida(codigoInvalido, checkin, checkout, hospede, quarto, valorTotal);
+    cout << "Reserva inválida criada: " << reservaInvalida.get_codigo().get_codigo() << endl;
+    
+} catch (const invalid_argument &e) {
+    cerr << "✅ Erro esperado em reserva inválida: " << e.what() << endl;
+}

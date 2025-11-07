@@ -89,4 +89,41 @@ public:
 
 };
 
+/**
+ * @class Reserva
+ * @brief representa uma reserva de hotel no sistema.
+ */
+class Reserva {
+private:
+    Codigo codigo; /**< código único da reserva */
+    Data check_in; /**< data de entrada do hóspede */
+    Data check_out; /**< data de saída do hóspede */
+    Pessoa hospede; /**< hóspede que realizou a reserva */
+    Quarto quarto; /**< quarto reservado */
+    Dinheiro valor_total; /**< valor total da reserva */
+public:
+    Reserva() = default;
+    Reserva(const Codigo &cod, const Data &in, const Data &out, 
+            const Pessoa &hosp, const Quarto &quart, const Dinheiro &valor); /**< construtor com atributos */
+
+    // Métodos de acesso
+    void set_codigo(const Codigo &cod); /**< define o código da reserva */
+    Codigo get_codigo() const; /**< retorna o código da reserva */
+    
+    void set_check_in(const Data &in); /**< define a data de check-in */
+    Data get_check_in() const; /**< retorna a data de check-in */
+    
+    void set_check_out(const Data &out); /**< define a data de check-out */
+    Data get_check_out() const; /**< retorna a data de check-out */
+    
+    void set_hospede(const Pessoa &hosp); /**< define o hóspede */
+    Pessoa get_hospede() const; /**< retorna o hóspede */
+    
+    void set_quarto(const Quarto &quart); /**< define o quarto */
+    Quarto get_quarto() const; /**< retorna o quarto */
+    
+    void set_valor_total(const Dinheiro &valor); /**< define o valor total */
+    Dinheiro get_valor_total() const; /**< retorna o valor total */
+};
+
 #endif // ENTIDADES_HPP_INCLUDED

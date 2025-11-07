@@ -140,14 +140,14 @@ class Data {
  * @class telefone
  * @brief representa um número telefônico no formato +DDDDDDDDDDDDDD.
  */
-class Telefone() {
+class Telefone {
     private:
         string telefone; /**< número telefônico. */
         bool validar(string t); /**< verifica validade do telefone. */
     public:
         Telefone(string t); /**< constrói um número telefônico. */
         void set_telefone(string t); /**< define o telefone. */
-        string get_telefone(); /**< retorna o telefone. */
+        string get_telefone() const; /**< retorna o telefone. */
 
 };
 
@@ -155,14 +155,14 @@ class Telefone() {
  * @class dinheiro
  * @brief representa uma quantia de dinheiro, armazenada em inteiros.
  */
-class Dinheiro() {
+class Dinheiro {
     private:
         int dinheiro; /**< valor do dinheiro, em inteiros. */
         bool validar(string d); /**< verifica validade do valor. */
     public:
         Dinheiro(string d); /**< constrói o dinheiro. */
         void set_dinheiro(string d); /**< define o dinheiro. */
-        int get_dinheiro(); /**< retorna o dinheiro. */
+        int get_dinheiro() const; /**< retorna o dinheiro. */
 
 };
 
@@ -170,14 +170,14 @@ class Dinheiro() {
  * @class código
  * @brief representa um código de 10 caracteres.
  */
-class Codigo() {
+class Codigo{
     private:
         string codigo; /**< código. */
         bool validar(string c); /**< verifica validade do código. */
     public:
         Codigo(string c); /**< constrói um código. */
         void set_codigo(string c); /**< define o código. */
-        string get_codigo(); /**< retorna o código. */
+        string get_codigo() const; /**< retorna o código. */
 
 };
 

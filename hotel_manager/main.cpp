@@ -70,6 +70,27 @@ int main()
         cerr << "Erro data1: " << e.what() << endl;
     }
 
+    // -------- Telefone --------
+    try{Telefone t1("99999-9999");cout << "Telefone criado: " << t1.get_telefone() << endl;}
+    catch (const invalid_argument &e){cerr << "Erro t1: " << e.what() << endl;}
+
+    try{Telefone t2("+12345678912345");cout << "Telefone criado: " << t2.get_telefone() << endl;}
+    catch (const invalid_argument &e){cerr << "Erro t2: " << e.what() << endl;}
+
+    // -------- Dinheiro --------
+    try{Dinheiro d1("2000000,00");cout << "Dinheiro criado: " << d1.get_dinheiro() << endl;}
+    catch (const invalid_argument &e){cerr << "Erro d1: " << e.what() << endl;}
+
+    try{Dinheiro d2("999,99");cout << "Dinheiro criado: " << d2.get_dinheiro() << endl;}
+    catch (const invalid_argument &e){cerr << "Erro d2: " << e.what() << endl;}
+
+    // -------- Código --------
+    try{Codigo codigo1("0325");cout << "Codigo criado: " << codigo1.get_codigo() << endl;}
+    catch (const invalid_argument &e){cerr << "Erro codigo1: " << e.what() << endl;}
+
+    try{Codigo codigo2("a123456789");cout << "Codigo criado: " << codigo2.get_codigo() << endl;}
+    catch (const invalid_argument &e){cerr << "Erro codigo2: " << e.what() << endl;}
+
     // ENTIDADES -------------------------------------------------------------------------------------
 
     try{
@@ -89,25 +110,25 @@ try {
     Codigo codigoReserva("abc123def4"); // 10 caracteres alfanuméricos
     Data checkin("15-MAR-2024");
     Data checkout("20-MAR-2024");
-    
+
     // Criar hóspede
     Nome nomeHospede("Joao Silva");
     Email emailHospede("joao@email.com");
     Pessoa hospede(nomeHospede, emailHospede);
-    
+
     // Criar quarto
     Numero numeroQuarto(101);
     Capacidade capQuarto(2);
     Dinheiro diaria("150,00"); // Formato string
     Ramal ramalQuarto(25);
     Quarto quarto(numeroQuarto, capQuarto, diaria, ramalQuarto);
-    
+
     // Criar valor total da reserva (5 diárias)
     Dinheiro valorTotal("750,00");
-    
+
     // Criar reserva
     Reserva reserva(codigoReserva, checkin, checkout, hospede, quarto, valorTotal);
-    
+
     cout << "✅ Reserva criada com sucesso!" << endl;
     cout << "Código: " << reserva.get_codigo().get_codigo() << endl;
     cout << "Check-in: " << reserva.get_check_in().get_data() << endl;
@@ -115,7 +136,7 @@ try {
     cout << "Hóspede: " << reserva.get_hospede().get_nome().get_nome() << endl;
     cout << "Quarto: " << reserva.get_quarto().get_numero().get_numero() << endl;
     cout << "Valor total: " << reserva.get_valor_total().get_dinheiro() << " centavos" << endl;
-    
+
 } catch (const invalid_argument &e) {
     cerr << "❌ Erro na reserva: " << e.what() << endl;
 }
@@ -134,10 +155,10 @@ try {
     Ramal ramalQuarto(30);
     Quarto quarto(numeroQuarto, capQuarto, diaria, ramalQuarto);
     Dinheiro valorTotal("1000,00");
-    
+
     Reserva reservaInvalida(codigoInvalido, checkin, checkout, hospede, quarto, valorTotal);
     cout << "Reserva inválida criada: " << reservaInvalida.get_codigo().get_codigo() << endl;
-    
+
 } catch (const invalid_argument &e) {
     cerr << "✅ Erro esperado em reserva inválida: " << e.what() << endl;
 }

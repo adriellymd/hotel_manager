@@ -374,7 +374,7 @@ void Telefone::set_telefone(string t) {
     telefone = t;
 }
 
-string Telefone::get_telefone() {
+string Telefone::get_telefone() const {
     return telefone;
 }
 
@@ -431,7 +431,7 @@ void Dinheiro::set_dinheiro(string d) {
     int dinheiro = stof(d) * 100;
 }
 
-int Dinheiro::get_dinheiro {
+int Dinheiro::get_dinheiro() const{
     return dinheiro;
 }
 
@@ -459,6 +459,6 @@ void Codigo::set_codigo(string c) {
     codigo = c;
 }
 
-string Codigo::get_codigo {
+string Codigo::get_codigo() const {
     return codigo;
 }

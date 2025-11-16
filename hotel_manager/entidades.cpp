@@ -51,50 +51,29 @@ Reserva::Reserva(const Codigo &cod, const Data &in, const Data &out,
                  const Pessoa &hosp, const Quarto &quart, const Dinheiro &valor)
     : codigo(cod), check_in(in), check_out(out), hospede(hosp), quarto(quart), valor_total(valor) {}
 
-void Reserva::set_codigo(const Codigo &cod) {
-    codigo = cod;
-}
+void Reserva::set_codigo(const Codigo &cod) {codigo = cod;}
+Codigo Reserva::get_codigo() const {return codigo;}
 
-Codigo Reserva::get_codigo() const {
-    return codigo;
-}
+void Reserva::set_check_in(const Data &in) {check_in = in;}
+Data Reserva::get_check_in() const {return check_in;}
 
-void Reserva::set_check_in(const Data &in) {
-    check_in = in;
-}
+void Reserva::set_check_out(const Data &out) {check_out = out;}
+Data Reserva::get_check_out() const {return check_out;}
 
-Data Reserva::get_check_in() const {
-    return check_in;
-}
+void Reserva::set_hospede(const Pessoa &hosp) {hospede = hosp;}
+Pessoa Reserva::get_hospede() const {return hospede;}
 
-void Reserva::set_check_out(const Data &out) {
-    check_out = out;
-}
+void Reserva::set_quarto(const Quarto &quart) {quarto = quart;}
+Quarto Reserva::get_quarto() const {return quarto;}
 
-Data Reserva::get_check_out() const {
-    return check_out;
-}
+void Reserva::set_valor_total(const Dinheiro &valor) {valor_total = valor;}
+Dinheiro Reserva::get_valor_total() const {return valor_total;}
 
-void Reserva::set_hospede(const Pessoa &hosp) {
-    hospede = hosp;
-}
+// -------- Hospede --------
+Hospede::Hospede(const Endereco &e, const Cartao &c) : endereco(e), cartao(c) {}
 
-Pessoa Reserva::get_hospede() const {
-    return hospede;
-}
+void Hospede::set_endereco(const Endereco &e) {endereco = e;}
+Endereco Hospede::get_endereco() const {return endereco;}
 
-void Reserva::set_quarto(const Quarto &quart) {
-    quarto = quart;
-}
-
-Quarto Reserva::get_quarto() const {
-    return quarto;
-}
-
-void Reserva::set_valor_total(const Dinheiro &valor) {
-    valor_total = valor;
-}
-
-Dinheiro Reserva::get_valor_total() const {
-    return valor_total;
-}
+void Hospede::set_cartao(const Cartao &c) {cartao = c;}
+Cartao Hospede::get_cartao() const {return cartao;}

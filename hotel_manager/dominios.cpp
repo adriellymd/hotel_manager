@@ -385,7 +385,7 @@ Dinheiro::Dinheiro(string d) {
 
 bool Dinheiro::validar(string d) {
     string string_int = "";
-    int parte_inteira;
+    int parte_inteira = 0;
 
     for(int i = 0; i < d.size(); i++) {
         if(isdigit(d[i])) {
@@ -427,22 +427,23 @@ bool Dinheiro::validar(string d) {
 
 void Dinheiro::set_dinheiro(string d) {
     validar(d);
+    string temp = d;
     d[d.size()-3] = '.';
-    int dinheiro = stof(d) * 100;
+    this->dinheiro = static_cast<int>(stof(temp) * 100);
 }
 
 int Dinheiro::get_dinheiro() const{
     return dinheiro;
 }
 
-// -------- Código --------
+// -------- Cï¿½digo --------
 Codigo::Codigo(string c) {
     set_codigo(c);
 }
 
 bool Codigo::validar(string c) {
     for(int i = 0; i < c.size(); i++) {
-        if(!isdigit(c[i]) or !islower(c[i])) {
+        if(!isdigit(c[i]) && !islower(c[i])) {
             throw invalid_argument("Codigo invalido. Deve conter apenas numeros ou letras minusculas.");
         }
     }

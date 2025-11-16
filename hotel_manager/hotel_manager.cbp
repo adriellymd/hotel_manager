@@ -34,14 +34,13 @@
 		</Compiler>
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.hpp" />
+		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.hpp" />
-		<Unit filename="gui/main_gui.cpp" />
 		<Unit filename="hotel_manager" />
 		<Unit filename="hotel_manager.cbp" />
 		<Unit filename="hotel_manager.depend" />
 		<Unit filename="hotel_manager.layout" />
 		<Unit filename="main.cpp" />
-		<Unit filename="main_gui.cpp" />
 		<Unit filename="run" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

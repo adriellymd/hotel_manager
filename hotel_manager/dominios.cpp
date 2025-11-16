@@ -25,7 +25,7 @@ Cartao::Cartao(string n) {
 
 bool Cartao::luhn(const string &num) const {
     int soma = 0, alternar = 0;
-    for(int i = num.size() - 1; i >= 0; i--) {
+    for(int i = (int)num.size() - 1; i >= 0; i--) {
         int digito = num[i] - '0';
         if(alternar) {
             digito *= 2;
@@ -359,7 +359,7 @@ bool Telefone::validar(string t) {
         throw invalid_argument("Telefone invalido. Deve conter exatamente 14 digitos alem do simbolo +.");
     }
 
-    for(int i = 1; i < t.size(); i++) {
+    for(int i = 1; i < (int)t.size(); i++) {
         if(!isdigit(t[i])) {
             throw invalid_argument("Telefone invalido. Deve conter apenas numeros apos o simbolo +.");
         }
@@ -387,7 +387,7 @@ bool Dinheiro::validar(string d) {
     string string_int = "";
     int parte_inteira = 0;
 
-    for(int i = 0; i < d.size(); i++) {
+    for(int i = 0; i < (int)d.size(); i++) {
         if(isdigit(d[i])) {
             string_int += d[i];
         } else {
@@ -415,7 +415,7 @@ bool Dinheiro::validar(string d) {
         throw invalid_argument("Dinheiro invalido. Use duas casas decimais.");
     } else {
         if(parte_inteira == 1000000) {
-            if(d[d.size()-2] != '0' or d[d.size()-1] != '0') {
+            if(d[d.size()-2] != '0' || d[d.size()-1] != '0') {
                 throw invalid_argument("Dinheiro invalido. Nao deve ultrapassar um milhao.");
             }
         }
@@ -428,7 +428,7 @@ bool Dinheiro::validar(string d) {
 void Dinheiro::set_dinheiro(string d) {
     validar(d);
     string temp = d;
-    d[d.size()-3] = '.';
+    for(auto &i : temp) if(i == ',') i = '.';
     this->dinheiro = static_cast<int>(stof(temp) * 100);
 }
 
@@ -436,13 +436,13 @@ int Dinheiro::get_dinheiro() const{
     return dinheiro;
 }
 
-// -------- C�digo --------
+// -------- Codigo --------
 Codigo::Codigo(string c) {
     set_codigo(c);
 }
 
 bool Codigo::validar(string c) {
-    for(int i = 0; i < c.size(); i++) {
+    for(int i = 0; i < (int)c.size(); i++) {
         if(!isdigit(c[i]) && !islower(c[i])) {
             throw invalid_argument("Codigo invalido. Deve conter apenas numeros ou letras minusculas.");
         }
@@ -463,3 +463,4 @@ void Codigo::set_codigo(string c) {
 string Codigo::get_codigo() const {
     return codigo;
 }
+

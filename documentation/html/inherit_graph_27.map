@@ -1,0 +1,5 @@
+<map id="Representação gráfica da hiearquia da classe" name="Representação gráfica da hiearquia da classe">
+<area shape="rect" id="Node000000" href="$classIApresentacaoHospede.html" title="interface para apresentação de hóspedes" alt="" coords="5,5,177,31"/>
+<area shape="rect" id="Node000001" href="$classApresentacaoHospede.html" title="controladora de apresentação para hóspedes" alt="" coords="225,5,393,31"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="191,15,225,15,225,21,191,21"/>
+</map>

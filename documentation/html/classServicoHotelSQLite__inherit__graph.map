@@ -1,0 +1,5 @@
+<map id="ServicoHotelSQLite" name="ServicoHotelSQLite">
+<area shape="rect" id="Node000001" title="Implementa operações com hotéis." alt="" coords="5,79,152,104"/>
+<area shape="rect" id="Node000002" href="$classIServicoHotel.html" title="interface para operações com hotéis" alt="" coords="24,5,133,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,44,81,79,76,79,76,44"/>
+</map>

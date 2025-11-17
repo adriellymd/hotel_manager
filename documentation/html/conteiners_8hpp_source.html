@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hotel Manager: Código-Fonte de /home/adriellymd/tp1/hotel_manager/for_doc/conteiners.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Hotel Manager<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a59eecd1a65a23e0b549ce2bd3bb621d.html">hotel_manager</a></li><li class="navelem"><a class="el" href="dir_973f734570137b2094e0157245adf255.html">for_doc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">conteiners.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="conteiners_8hpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CONTEINERS_SQLITE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CONTEINERS_SQLITE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="dominios_8hpp.html">dominios.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="entidades_8hpp.html">entidades.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;sqlite3.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classDatabaseManager.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      sqlite3* db;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <span class="keywordtype">string</span> dbPath;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <span class="keywordtype">bool</span> criarTabelas();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; path);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      <a class="code hl_function" href="classDatabaseManager.html#ae9b3a5da1e04fbb00faf8a034da1d063">~DatabaseManager</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classDatabaseManager.html#aa34b73b2c7dd4fc4c41bcde5c043cd04">conectar</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classDatabaseManager.html#a432f91fd4ea52b834dd5bcab69e6e693">desconectar</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classDatabaseManager.html#a8b0192b2b15cfc737469597940007f75">executarSQL</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; sql);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classDatabaseManager.html#a23c68ec481e2a739c12683896397a6cd">   29</a></span>      sqlite3* <a class="code hl_function" href="classDatabaseManager.html#a23c68ec481e2a739c12683896397a6cd">getDB</a>() {<span class="keywordflow">return</span> db;}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classContainerGerenteSQLite.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="classContainerGerenteSQLite.html">ContainerGerenteSQLite</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; dbManager;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classContainerGerenteSQLite.html#aec4639d06ee030f5a3504dac6ba98e81">   41</a></span>      <a class="code hl_function" href="classContainerGerenteSQLite.html#aec4639d06ee030f5a3504dac6ba98e81">ContainerGerenteSQLite</a>(<a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; db) : dbManager(db) {}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerGerenteSQLite.html#a00a42ad5581a62990f0600831b8ba807">adicionar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPessoa.html">Pessoa</a>&amp; <a class="code hl_class" href="classpessoa.html">pessoa</a>, <span class="keyword">const</span> <a class="code hl_class" href="classGerente.html">Gerente</a>&amp; <a class="code hl_class" href="classgerente.html">gerente</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerGerenteSQLite.html#a541692241d93a6974ac60e7bee433b63">buscar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>, <a class="code hl_class" href="classPessoa.html">Pessoa</a>&amp; <a class="code hl_class" href="classpessoa.html">pessoa</a>, <a class="code hl_class" href="classGerente.html">Gerente</a>&amp; <a class="code hl_class" href="classgerente.html">gerente</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerGerenteSQLite.html#a3f4b0e4bbc328ff6c776b211ec221886">atualizar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>, <span class="keyword">const</span> <a class="code hl_class" href="classPessoa.html">Pessoa</a>&amp; <a class="code hl_class" href="classpessoa.html">pessoa</a>, <span class="keyword">const</span> <a class="code hl_class" href="classGerente.html">Gerente</a>&amp; <a class="code hl_class" href="classgerente.html">gerente</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerGerenteSQLite.html#a2e72c0396e00b3ccb95414c0f3f3cb56">remover</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerGerenteSQLite.html#a1bfa8023eb37ea79fc61a34c010e72a4">existe</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classContainerHotelSQLite.html">   53</a></span><span class="keyword">class </span><a class="code hl_class" href="classContainerHotelSQLite.html">ContainerHotelSQLite</a> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; dbManager;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classContainerHotelSQLite.html#a124716211f4b6df321fd4b670ec881a0">   58</a></span>      <a class="code hl_function" href="classContainerHotelSQLite.html#a124716211f4b6df321fd4b670ec881a0">ContainerHotelSQLite</a>(<a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; db) : dbManager(db) {}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHotelSQLite.html#ad3233738766b4e78e5c9215ed12891bf">adicionar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classHotel.html">Hotel</a>&amp; <a class="code hl_class" href="classhotel.html">hotel</a>, <span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; emailGerente);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHotelSQLite.html#add24c15a0185dd6dc5c93bad5bb221bb">buscar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo, <a class="code hl_class" href="classHotel.html">Hotel</a>&amp; <a class="code hl_class" href="classhotel.html">hotel</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHotelSQLite.html#a2b19ebcabbb14c2e3845e47507b04ccc">atualizar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo, <span class="keyword">const</span> <a class="code hl_class" href="classHotel.html">Hotel</a>&amp; <a class="code hl_class" href="classhotel.html">hotel</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHotelSQLite.html#a5d50363f90e4f214864208f3749cbd2f">remover</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHotelSQLite.html#a612fb53666d3fedbd51df9e9e5cffd90">existe</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      vector&lt;Hotel&gt; <a class="code hl_function" href="classContainerHotelSQLite.html#aeb67a39467448397f20d36e941f8fb4f">listarPorGerente</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; emailGerente);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="keywordtype">string</span> <a class="code hl_function" href="classContainerHotelSQLite.html#a5708573a2ccbbf4dcec0866f15951cf4">obterEmailGerente</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classContainerQuartoSQLite.html">   72</a></span><span class="keyword">class </span><a class="code hl_class" href="classContainerQuartoSQLite.html">ContainerQuartoSQLite</a> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; dbManager;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classContainerQuartoSQLite.html#abd9d48faa886ba8e55300a0af4ab1be2">   77</a></span>      <a class="code hl_function" href="classContainerQuartoSQLite.html#abd9d48faa886ba8e55300a0af4ab1be2">ContainerQuartoSQLite</a>(<a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; db) : dbManager(db) {}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerQuartoSQLite.html#a5edbcb0c9a019a012a8150f69aeef63b">adicionar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classQuarto.html">Quarto</a>&amp; <a class="code hl_class" href="classquarto.html">quarto</a>, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerQuartoSQLite.html#a6f508119d4366dca642e46688414cfe6">buscar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classNumero.html">Numero</a>&amp; <a class="code hl_class" href="classnumero.html">numero</a>, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel, <a class="code hl_class" href="classQuarto.html">Quarto</a>&amp; <a class="code hl_class" href="classquarto.html">quarto</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerQuartoSQLite.html#ae05e08ce51e677721b6e8ec4f4702ee3">atualizar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classNumero.html">Numero</a>&amp; <a class="code hl_class" href="classnumero.html">numero</a>, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel, <span class="keyword">const</span> <a class="code hl_class" href="classQuarto.html">Quarto</a>&amp; <a class="code hl_class" href="classquarto.html">quarto</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerQuartoSQLite.html#a1ee3005260f46df0f107497f8d327b66">remover</a>(<span class="keyword">const</span> <a class="code hl_class" href="classNumero.html">Numero</a>&amp; <a class="code hl_class" href="classnumero.html">numero</a>, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerQuartoSQLite.html#a2cb2609d1ccde701dac36b4aedf808d8">existe</a>(<span class="keyword">const</span> <a class="code hl_class" href="classNumero.html">Numero</a>&amp; <a class="code hl_class" href="classnumero.html">numero</a>, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      vector&lt;Quarto&gt; <a class="code hl_function" href="classContainerQuartoSQLite.html#a33ee967f8312dc85dfaa653415fde3f1">listarPorHotel</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="};">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classContainerReservaSQLite.html">   90</a></span><span class="keyword">class </span><a class="code hl_class" href="classContainerReservaSQLite.html">ContainerReservaSQLite</a> {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; dbManager;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classContainerReservaSQLite.html#a77fe99914572265012c32e7f71e4cf0a">   95</a></span>      <a class="code hl_function" href="classContainerReservaSQLite.html#a77fe99914572265012c32e7f71e4cf0a">ContainerReservaSQLite</a>(<a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; db) : dbManager(db) {}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerReservaSQLite.html#a05f259cf63395551ab56f979c6102ad8">adicionar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classReserva.html">Reserva</a>&amp; reserva, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel, <span class="keyword">const</span> <a class="code hl_class" href="classNumero.html">Numero</a>&amp; numeroQuarto);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerReservaSQLite.html#a5aea02e1a94f201bca09f0c9cd0096a5">buscar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo, <a class="code hl_class" href="classReserva.html">Reserva</a>&amp; reserva);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerReservaSQLite.html#abceb28c1bc5e22cd9011a9448691c41a">atualizar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo, <span class="keyword">const</span> <a class="code hl_class" href="classReserva.html">Reserva</a>&amp; reserva, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel, <span class="keyword">const</span> <a class="code hl_class" href="classNumero.html">Numero</a>&amp; numeroQuarto);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerReservaSQLite.html#a5381e2fc2deb3086c045f83eaf9ef8eb">remover</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerReservaSQLite.html#a74f4066af4a5e3b5b620de8a729dec71">existe</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigo);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      vector&lt;Reserva&gt; <a class="code hl_function" href="classContainerReservaSQLite.html#a0b30514356ab37c9b27af0e90acdafb7">listarPorHotel</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerReservaSQLite.html#a4b9a7dac3de051e1ad3c22278496acf7">verificarConflito</a>(<span class="keyword">const</span> <a class="code hl_class" href="classNumero.html">Numero</a>&amp; numeroQuarto, <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoHotel,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                            <span class="keyword">const</span> <a class="code hl_class" href="classData.html">Data</a>&amp; checkIn, <span class="keyword">const</span> <a class="code hl_class" href="classData.html">Data</a>&amp; checkOut,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                            <span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp; codigoReservaExcluir);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="};">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classContainerHospedeSQLite.html">  111</a></span><span class="keyword">class </span><a class="code hl_class" href="classContainerHospedeSQLite.html">ContainerHospedeSQLite</a> {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; dbManager;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classContainerHospedeSQLite.html#a54ff5a0aedc4155bcc05ad3c8818c6db">  116</a></span>      <a class="code hl_function" href="classContainerHospedeSQLite.html#a54ff5a0aedc4155bcc05ad3c8818c6db">ContainerHospedeSQLite</a>(<a class="code hl_class" href="classDatabaseManager.html">DatabaseManager</a>&amp; db) : dbManager(db) {}</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHospedeSQLite.html#a571577c8445653c2bebd54b6ea73dbab">adicionar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classPessoa.html">Pessoa</a>&amp; <a class="code hl_class" href="classpessoa.html">pessoa</a>, <span class="keyword">const</span> <a class="code hl_class" href="classHospede.html">Hospede</a>&amp; hospede);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHospedeSQLite.html#a0937df7256ffa2e82e3257960f2df9e6">buscar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>, <a class="code hl_class" href="classPessoa.html">Pessoa</a>&amp; <a class="code hl_class" href="classpessoa.html">pessoa</a>, <a class="code hl_class" href="classHospede.html">Hospede</a>&amp; hospede);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHospedeSQLite.html#a052b99272281bc986bb9b44d37e95c81">atualizar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>, <span class="keyword">const</span> <a class="code hl_class" href="classPessoa.html">Pessoa</a>&amp; <a class="code hl_class" href="classpessoa.html">pessoa</a>, <span class="keyword">const</span> <a class="code hl_class" href="classHospede.html">Hospede</a>&amp; hospede);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHospedeSQLite.html#a9c0c7bf9dc42fcd049f9213d037ca422">remover</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classContainerHospedeSQLite.html#aaad3ffdb4c81b5ac68769b0fd2b6fb0c">existe</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEmail.html">Email</a>&amp; <a class="code hl_class" href="classemail.html">email</a>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      vector&lt;pair&lt;Pessoa, Hospede&gt;&gt; <a class="code hl_function" href="classContainerHospedeSQLite.html#adfb2ee72f379c429ff6ea7c6f1a2e3d0">listarTodos</a>();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif </span><span class="comment">// CONTEINERS_SQLITE_HPP_INCLUDED</span></div>
+<div class="ttc" id="aclassCodigo_html"><div class="ttname"><a href="classCodigo.html">Codigo</a></div><div class="ttdef"><b>Definição</b> dominios.hpp:184</div></div>
+<div class="ttc" id="aclassContainerGerenteSQLite_html"><div class="ttname"><a href="classContainerGerenteSQLite.html">ContainerGerenteSQLite</a></div><div class="ttdoc">container para gerentes usando SQLite</div><div class="ttdef"><b>Definição</b> conteiners.hpp:36</div></div>
+<div class="ttc" id="aclassContainerGerenteSQLite_html_a00a42ad5581a62990f0600831b8ba807"><div class="ttname"><a href="classContainerGerenteSQLite.html#a00a42ad5581a62990f0600831b8ba807">ContainerGerenteSQLite::adicionar</a></div><div class="ttdeci">bool adicionar(const Pessoa &amp;pessoa, const Gerente &amp;gerente)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:97</div></div>
+<div class="ttc" id="aclassContainerGerenteSQLite_html_a1bfa8023eb37ea79fc61a34c010e72a4"><div class="ttname"><a href="classContainerGerenteSQLite.html#a1bfa8023eb37ea79fc61a34c010e72a4">ContainerGerenteSQLite::existe</a></div><div class="ttdeci">bool existe(const Email &amp;email)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:179</div></div>
+<div class="ttc" id="aclassContainerGerenteSQLite_html_a2e72c0396e00b3ccb95414c0f3f3cb56"><div class="ttname"><a href="classContainerGerenteSQLite.html#a2e72c0396e00b3ccb95414c0f3f3cb56">ContainerGerenteSQLite::remover</a></div><div class="ttdeci">bool remover(const Email &amp;email)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:166</div></div>
+<div class="ttc" id="aclassContainerGerenteSQLite_html_a3f4b0e4bbc328ff6c776b211ec221886"><div class="ttname"><a href="classContainerGerenteSQLite.html#a3f4b0e4bbc328ff6c776b211ec221886">ContainerGerenteSQLite::atualizar</a></div><div class="ttdeci">bool atualizar(const Email &amp;email, const Pessoa &amp;pessoa, const Gerente &amp;gerente)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:150</div></div>
+<div class="ttc" id="aclassContainerGerenteSQLite_html_a541692241d93a6974ac60e7bee433b63"><div class="ttname"><a href="classContainerGerenteSQLite.html#a541692241d93a6974ac60e7bee433b63">ContainerGerenteSQLite::buscar</a></div><div class="ttdeci">bool buscar(const Email &amp;email, Pessoa &amp;pessoa, Gerente &amp;gerente)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:116</div></div>
+<div class="ttc" id="aclassContainerGerenteSQLite_html_aec4639d06ee030f5a3504dac6ba98e81"><div class="ttname"><a href="classContainerGerenteSQLite.html#aec4639d06ee030f5a3504dac6ba98e81">ContainerGerenteSQLite::ContainerGerenteSQLite</a></div><div class="ttdeci">ContainerGerenteSQLite(DatabaseManager &amp;db)</div><div class="ttdef"><b>Definição</b> conteiners.hpp:41</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html"><div class="ttname"><a href="classContainerHospedeSQLite.html">ContainerHospedeSQLite</a></div><div class="ttdoc">container para hóspedes usando SQLite</div><div class="ttdef"><b>Definição</b> conteiners.hpp:111</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html_a052b99272281bc986bb9b44d37e95c81"><div class="ttname"><a href="classContainerHospedeSQLite.html#a052b99272281bc986bb9b44d37e95c81">ContainerHospedeSQLite::atualizar</a></div><div class="ttdeci">bool atualizar(const Email &amp;email, const Pessoa &amp;pessoa, const Hospede &amp;hospede)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:687</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html_a0937df7256ffa2e82e3257960f2df9e6"><div class="ttname"><a href="classContainerHospedeSQLite.html#a0937df7256ffa2e82e3257960f2df9e6">ContainerHospedeSQLite::buscar</a></div><div class="ttdeci">bool buscar(const Email &amp;email, Pessoa &amp;pessoa, Hospede &amp;hospede)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:656</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html_a54ff5a0aedc4155bcc05ad3c8818c6db"><div class="ttname"><a href="classContainerHospedeSQLite.html#a54ff5a0aedc4155bcc05ad3c8818c6db">ContainerHospedeSQLite::ContainerHospedeSQLite</a></div><div class="ttdeci">ContainerHospedeSQLite(DatabaseManager &amp;db)</div><div class="ttdef"><b>Definição</b> conteiners.hpp:116</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html_a571577c8445653c2bebd54b6ea73dbab"><div class="ttname"><a href="classContainerHospedeSQLite.html#a571577c8445653c2bebd54b6ea73dbab">ContainerHospedeSQLite::adicionar</a></div><div class="ttdeci">bool adicionar(const Pessoa &amp;pessoa, const Hospede &amp;hospede)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:641</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html_a9c0c7bf9dc42fcd049f9213d037ca422"><div class="ttname"><a href="classContainerHospedeSQLite.html#a9c0c7bf9dc42fcd049f9213d037ca422">ContainerHospedeSQLite::remover</a></div><div class="ttdeci">bool remover(const Email &amp;email)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:703</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html_aaad3ffdb4c81b5ac68769b0fd2b6fb0c"><div class="ttname"><a href="classContainerHospedeSQLite.html#aaad3ffdb4c81b5ac68769b0fd2b6fb0c">ContainerHospedeSQLite::existe</a></div><div class="ttdeci">bool existe(const Email &amp;email)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:715</div></div>
+<div class="ttc" id="aclassContainerHospedeSQLite_html_adfb2ee72f379c429ff6ea7c6f1a2e3d0"><div class="ttname"><a href="classContainerHospedeSQLite.html#adfb2ee72f379c429ff6ea7c6f1a2e3d0">ContainerHospedeSQLite::listarTodos</a></div><div class="ttdeci">vector&lt; pair&lt; Pessoa, Hospede &gt; &gt; listarTodos()</div><div class="ttdef"><b>Definição</b> conteiners.cpp:730</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html"><div class="ttname"><a href="classContainerHotelSQLite.html">ContainerHotelSQLite</a></div><div class="ttdoc">container para hotéis usando SQLite</div><div class="ttdef"><b>Definição</b> conteiners.hpp:53</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_a124716211f4b6df321fd4b670ec881a0"><div class="ttname"><a href="classContainerHotelSQLite.html#a124716211f4b6df321fd4b670ec881a0">ContainerHotelSQLite::ContainerHotelSQLite</a></div><div class="ttdeci">ContainerHotelSQLite(DatabaseManager &amp;db)</div><div class="ttdef"><b>Definição</b> conteiners.hpp:58</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_a2b19ebcabbb14c2e3845e47507b04ccc"><div class="ttname"><a href="classContainerHotelSQLite.html#a2b19ebcabbb14c2e3845e47507b04ccc">ContainerHotelSQLite::atualizar</a></div><div class="ttdeci">bool atualizar(const Codigo &amp;codigo, const Hotel &amp;hotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:245</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_a5708573a2ccbbf4dcec0866f15951cf4"><div class="ttname"><a href="classContainerHotelSQLite.html#a5708573a2ccbbf4dcec0866f15951cf4">ContainerHotelSQLite::obterEmailGerente</a></div><div class="ttdeci">string obterEmailGerente(const Codigo &amp;codigoHotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:320</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_a5d50363f90e4f214864208f3749cbd2f"><div class="ttname"><a href="classContainerHotelSQLite.html#a5d50363f90e4f214864208f3749cbd2f">ContainerHotelSQLite::remover</a></div><div class="ttdeci">bool remover(const Codigo &amp;codigo)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:262</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_a612fb53666d3fedbd51df9e9e5cffd90"><div class="ttname"><a href="classContainerHotelSQLite.html#a612fb53666d3fedbd51df9e9e5cffd90">ContainerHotelSQLite::existe</a></div><div class="ttdeci">bool existe(const Codigo &amp;codigo)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:278</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_ad3233738766b4e78e5c9215ed12891bf"><div class="ttname"><a href="classContainerHotelSQLite.html#ad3233738766b4e78e5c9215ed12891bf">ContainerHotelSQLite::adicionar</a></div><div class="ttdeci">bool adicionar(const Hotel &amp;hotel, const Email &amp;emailGerente)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:196</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_add24c15a0185dd6dc5c93bad5bb221bb"><div class="ttname"><a href="classContainerHotelSQLite.html#add24c15a0185dd6dc5c93bad5bb221bb">ContainerHotelSQLite::buscar</a></div><div class="ttdeci">bool buscar(const Codigo &amp;codigo, Hotel &amp;hotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:213</div></div>
+<div class="ttc" id="aclassContainerHotelSQLite_html_aeb67a39467448397f20d36e941f8fb4f"><div class="ttname"><a href="classContainerHotelSQLite.html#aeb67a39467448397f20d36e941f8fb4f">ContainerHotelSQLite::listarPorGerente</a></div><div class="ttdeci">vector&lt; Hotel &gt; listarPorGerente(const Email &amp;emailGerente)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:294</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html"><div class="ttname"><a href="classContainerQuartoSQLite.html">ContainerQuartoSQLite</a></div><div class="ttdoc">container para quartos usando SQLite</div><div class="ttdef"><b>Definição</b> conteiners.hpp:72</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html_a1ee3005260f46df0f107497f8d327b66"><div class="ttname"><a href="classContainerQuartoSQLite.html#a1ee3005260f46df0f107497f8d327b66">ContainerQuartoSQLite::remover</a></div><div class="ttdeci">bool remover(const Numero &amp;numero, const Codigo &amp;codigoHotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:411</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html_a2cb2609d1ccde701dac36b4aedf808d8"><div class="ttname"><a href="classContainerQuartoSQLite.html#a2cb2609d1ccde701dac36b4aedf808d8">ContainerQuartoSQLite::existe</a></div><div class="ttdeci">bool existe(const Numero &amp;numero, const Codigo &amp;codigoHotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:425</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html_a33ee967f8312dc85dfaa653415fde3f1"><div class="ttname"><a href="classContainerQuartoSQLite.html#a33ee967f8312dc85dfaa653415fde3f1">ContainerQuartoSQLite::listarPorHotel</a></div><div class="ttdeci">vector&lt; Quarto &gt; listarPorHotel(const Codigo &amp;codigoHotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:442</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html_a5edbcb0c9a019a012a8150f69aeef63b"><div class="ttname"><a href="classContainerQuartoSQLite.html#a5edbcb0c9a019a012a8150f69aeef63b">ContainerQuartoSQLite::adicionar</a></div><div class="ttdeci">bool adicionar(const Quarto &amp;quarto, const Codigo &amp;codigoHotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:338</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html_a6f508119d4366dca642e46688414cfe6"><div class="ttname"><a href="classContainerQuartoSQLite.html#a6f508119d4366dca642e46688414cfe6">ContainerQuartoSQLite::buscar</a></div><div class="ttdeci">bool buscar(const Numero &amp;numero, const Codigo &amp;codigoHotel, Quarto &amp;quarto)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:358</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html_abd9d48faa886ba8e55300a0af4ab1be2"><div class="ttname"><a href="classContainerQuartoSQLite.html#abd9d48faa886ba8e55300a0af4ab1be2">ContainerQuartoSQLite::ContainerQuartoSQLite</a></div><div class="ttdeci">ContainerQuartoSQLite(DatabaseManager &amp;db)</div><div class="ttdef"><b>Definição</b> conteiners.hpp:77</div></div>
+<div class="ttc" id="aclassContainerQuartoSQLite_html_ae05e08ce51e677721b6e8ec4f4702ee3"><div class="ttname"><a href="classContainerQuartoSQLite.html#ae05e08ce51e677721b6e8ec4f4702ee3">ContainerQuartoSQLite::atualizar</a></div><div class="ttdeci">bool atualizar(const Numero &amp;numero, const Codigo &amp;codigoHotel, const Quarto &amp;quarto)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:394</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html"><div class="ttname"><a href="classContainerReservaSQLite.html">ContainerReservaSQLite</a></div><div class="ttdoc">container para reservas usando SQLite</div><div class="ttdef"><b>Definição</b> conteiners.hpp:90</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_a05f259cf63395551ab56f979c6102ad8"><div class="ttname"><a href="classContainerReservaSQLite.html#a05f259cf63395551ab56f979c6102ad8">ContainerReservaSQLite::adicionar</a></div><div class="ttdeci">bool adicionar(const Reserva &amp;reserva, const Codigo &amp;codigoHotel, const Numero &amp;numeroQuarto)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:471</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_a0b30514356ab37c9b27af0e90acdafb7"><div class="ttname"><a href="classContainerReservaSQLite.html#a0b30514356ab37c9b27af0e90acdafb7">ContainerReservaSQLite::listarPorHotel</a></div><div class="ttdeci">vector&lt; Reserva &gt; listarPorHotel(const Codigo &amp;codigoHotel)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:580</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_a4b9a7dac3de051e1ad3c22278496acf7"><div class="ttname"><a href="classContainerReservaSQLite.html#a4b9a7dac3de051e1ad3c22278496acf7">ContainerReservaSQLite::verificarConflito</a></div><div class="ttdeci">bool verificarConflito(const Numero &amp;numeroQuarto, const Codigo &amp;codigoHotel, const Data &amp;checkIn, const Data &amp;checkOut, const Codigo &amp;codigoReservaExcluir)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:612</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_a5381e2fc2deb3086c045f83eaf9ef8eb"><div class="ttname"><a href="classContainerReservaSQLite.html#a5381e2fc2deb3086c045f83eaf9ef8eb">ContainerReservaSQLite::remover</a></div><div class="ttdeci">bool remover(const Codigo &amp;codigo)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:551</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_a5aea02e1a94f201bca09f0c9cd0096a5"><div class="ttname"><a href="classContainerReservaSQLite.html#a5aea02e1a94f201bca09f0c9cd0096a5">ContainerReservaSQLite::buscar</a></div><div class="ttdeci">bool buscar(const Codigo &amp;codigo, Reserva &amp;reserva)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:491</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_a74f4066af4a5e3b5b620de8a729dec71"><div class="ttname"><a href="classContainerReservaSQLite.html#a74f4066af4a5e3b5b620de8a729dec71">ContainerReservaSQLite::existe</a></div><div class="ttdeci">bool existe(const Codigo &amp;codigo)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:564</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_a77fe99914572265012c32e7f71e4cf0a"><div class="ttname"><a href="classContainerReservaSQLite.html#a77fe99914572265012c32e7f71e4cf0a">ContainerReservaSQLite::ContainerReservaSQLite</a></div><div class="ttdeci">ContainerReservaSQLite(DatabaseManager &amp;db)</div><div class="ttdef"><b>Definição</b> conteiners.hpp:95</div></div>
+<div class="ttc" id="aclassContainerReservaSQLite_html_abceb28c1bc5e22cd9011a9448691c41a"><div class="ttname"><a href="classContainerReservaSQLite.html#abceb28c1bc5e22cd9011a9448691c41a">ContainerReservaSQLite::atualizar</a></div><div class="ttdeci">bool atualizar(const Codigo &amp;codigo, const Reserva &amp;reserva, const Codigo &amp;codigoHotel, const Numero &amp;numeroQuarto)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:531</div></div>
+<div class="ttc" id="aclassData_html"><div class="ttname"><a href="classData.html">Data</a></div><div class="ttdoc">Representa uma data válida no formato DD-MMM-AAAA.</div><div class="ttdef"><b>Definição</b> dominios.hpp:136</div></div>
+<div class="ttc" id="aclassDatabaseManager_html"><div class="ttname"><a href="classDatabaseManager.html">DatabaseManager</a></div><div class="ttdoc">gerencia conexão com SQLite</div><div class="ttdef"><b>Definição</b> conteiners.hpp:16</div></div>
+<div class="ttc" id="aclassDatabaseManager_html_a23c68ec481e2a739c12683896397a6cd"><div class="ttname"><a href="classDatabaseManager.html#a23c68ec481e2a739c12683896397a6cd">DatabaseManager::getDB</a></div><div class="ttdeci">sqlite3 * getDB()</div><div class="ttdef"><b>Definição</b> conteiners.hpp:29</div></div>
+<div class="ttc" id="aclassDatabaseManager_html_a432f91fd4ea52b834dd5bcab69e6e693"><div class="ttname"><a href="classDatabaseManager.html#a432f91fd4ea52b834dd5bcab69e6e693">DatabaseManager::desconectar</a></div><div class="ttdeci">void desconectar()</div><div class="ttdef"><b>Definição</b> conteiners.cpp:23</div></div>
+<div class="ttc" id="aclassDatabaseManager_html_a8b0192b2b15cfc737469597940007f75"><div class="ttname"><a href="classDatabaseManager.html#a8b0192b2b15cfc737469597940007f75">DatabaseManager::executarSQL</a></div><div class="ttdeci">bool executarSQL(const string &amp;sql)</div><div class="ttdef"><b>Definição</b> conteiners.cpp:30</div></div>
+<div class="ttc" id="aclassDatabaseManager_html_aa34b73b2c7dd4fc4c41bcde5c043cd04"><div class="ttname"><a href="classDatabaseManager.html#aa34b73b2c7dd4fc4c41bcde5c043cd04">DatabaseManager::conectar</a></div><div class="ttdeci">bool conectar()</div><div class="ttdef"><b>Definição</b> conteiners.cpp:14</div></div>
+<div class="ttc" id="aclassDatabaseManager_html_ae9b3a5da1e04fbb00faf8a034da1d063"><div class="ttname"><a href="classDatabaseManager.html#ae9b3a5da1e04fbb00faf8a034da1d063">DatabaseManager::~DatabaseManager</a></div><div class="ttdeci">~DatabaseManager()</div><div class="ttdef"><b>Definição</b> conteiners.cpp:10</div></div>
+<div class="ttc" id="aclassEmail_html"><div class="ttname"><a href="classEmail.html">Email</a></div><div class="ttdef"><b>Definição</b> dominios.hpp:60</div></div>
+<div class="ttc" id="aclassGerente_html"><div class="ttname"><a href="classGerente.html">Gerente</a></div><div class="ttdef"><b>Definição</b> entidades.hpp:28</div></div>
+<div class="ttc" id="aclassHospede_html"><div class="ttname"><a href="classHospede.html">Hospede</a></div><div class="ttdef"><b>Definição</b> entidades.hpp:134</div></div>
+<div class="ttc" id="aclassHotel_html"><div class="ttname"><a href="classHotel.html">Hotel</a></div><div class="ttdef"><b>Definição</b> entidades.hpp:46</div></div>
+<div class="ttc" id="aclassNumero_html"><div class="ttname"><a href="classNumero.html">Numero</a></div><div class="ttdef"><b>Definição</b> dominios.hpp:105</div></div>
+<div class="ttc" id="aclassPessoa_html"><div class="ttname"><a href="classPessoa.html">Pessoa</a></div><div class="ttdef"><b>Definição</b> entidades.hpp:10</div></div>
+<div class="ttc" id="aclassQuarto_html"><div class="ttname"><a href="classQuarto.html">Quarto</a></div><div class="ttdef"><b>Definição</b> entidades.hpp:71</div></div>
+<div class="ttc" id="aclassReserva_html"><div class="ttname"><a href="classReserva.html">Reserva</a></div><div class="ttdoc">representa uma reserva de hotel no sistema.</div><div class="ttdef"><b>Definição</b> entidades.hpp:96</div></div>
+<div class="ttc" id="aclassemail_html"><div class="ttname"><a href="classemail.html">email</a></div><div class="ttdoc">representa um endereço de email válido.</div></div>
+<div class="ttc" id="aclassgerente_html"><div class="ttname"><a href="classgerente.html">gerente</a></div><div class="ttdoc">representa um gerente do sistema.</div></div>
+<div class="ttc" id="aclasshotel_html"><div class="ttname"><a href="classhotel.html">hotel</a></div><div class="ttdoc">representa um hotel do sistema.</div></div>
+<div class="ttc" id="aclassnumero_html"><div class="ttname"><a href="classnumero.html">numero</a></div><div class="ttdoc">representa um número valido (001 a 999).</div></div>
+<div class="ttc" id="aclasspessoa_html"><div class="ttname"><a href="classpessoa.html">pessoa</a></div><div class="ttdoc">representa uma pessoa do sistema.</div></div>
+<div class="ttc" id="aclassquarto_html"><div class="ttname"><a href="classquarto.html">quarto</a></div><div class="ttdoc">representa um quarto do sistema.</div></div>
+<div class="ttc" id="adominios_8hpp_html"><div class="ttname"><a href="dominios_8hpp.html">dominios.hpp</a></div></div>
+<div class="ttc" id="aentidades_8hpp_html"><div class="ttname"><a href="entidades_8hpp.html">entidades.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

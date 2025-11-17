@@ -18,6 +18,8 @@ int Capacidade::get_capacidade() const {
     return capacidade;
 }
 
+Capacidade::Capacidade() : capacidade(1) {}
+
 // -------- Cartao --------
 Cartao::Cartao(string n) {
     set_cartao(n);
@@ -55,6 +57,8 @@ void Cartao::set_cartao(string n) {
 string Cartao::get_cartao() const {
     return cartao;
 }
+
+Cartao::Cartao() : cartao("0000000000000000") {}
 
 // -------- Senha --------
 Senha::Senha(string s) {
@@ -102,6 +106,8 @@ void Senha::set_senha(string s) {
 string Senha::get_senha() const {
     return senha;
 }
+
+Senha::Senha() : senha("Aa1#b") {}
 
 // -------- Email --------
 Email::Email(string s) {
@@ -155,6 +161,8 @@ string Email::get_email() const {
     return email;
 }
 
+Email::Email() : email("default@example.com") {}
+
 // -------- Nome --------
 Nome::Nome(string n) {
     set_nome(n);
@@ -194,6 +202,8 @@ string Nome::get_nome() const {
     return nome;
 }
 
+Nome::Nome() : nome("Nome Padrao") {}
+
 // -------- Ramal --------
 Ramal::Ramal(int r) {
     set_ramal(r);
@@ -214,6 +224,8 @@ int Ramal::get_ramal() const {
     return ramal;
 }
 
+Ramal::Ramal() : ramal(0) {}
+
 // -------- Numero --------
 Numero::Numero(int n) {
     set_numero(n);
@@ -233,6 +245,8 @@ void Numero::set_numero(int n) {
 int Numero::get_numero() const {
     return numero;
 }
+
+Numero::Numero() : numero(1) {}
 
 // -------- Endereco --------
 Endereco::Endereco(string e) {
@@ -278,6 +292,8 @@ void Endereco::set_endereco(string e) {
 string Endereco::get_endereco() const {
     return endereco;
 }
+
+Endereco::Endereco() : endereco("Rua A") {}
 
 // -------- Data --------
 Data::Data(string d) {
@@ -345,6 +361,8 @@ string Data::get_data() const {
     return data;
 }
 
+Data::Data() : data("01-JAN-2000") {}
+
 // -------- Telefone --------
 Telefone::Telefone(string t) {
     set_telefone(t);
@@ -378,6 +396,8 @@ string Telefone::get_telefone() const {
     return telefone;
 }
 
+Telefone::Telefone() : telefone("+00000000000000") {}
+
 // -------- Dinheiro --------
 Dinheiro::Dinheiro(string d) {
     set_dinheiro(d);
@@ -406,7 +426,6 @@ bool Dinheiro::validar(string d) {
             if(parte_inteira > 1000000) {
                 throw invalid_argument("Dinheiro invalido. Nao deve ultrapassar um milhao.");
             }
-
             break;
         }
     }
@@ -420,9 +439,7 @@ bool Dinheiro::validar(string d) {
             }
         }
     }
-
     return true;
-
 }
 
 void Dinheiro::set_dinheiro(string d) {
@@ -435,6 +452,8 @@ void Dinheiro::set_dinheiro(string d) {
 int Dinheiro::get_dinheiro() const{
     return dinheiro;
 }
+
+Dinheiro::Dinheiro() : dinheiro(0) {}
 
 // -------- Codigo --------
 Codigo::Codigo(string c) {
@@ -464,3 +483,4 @@ string Codigo::get_codigo() const {
     return codigo;
 }
 
+Codigo::Codigo() : codigo("0000000000") {}

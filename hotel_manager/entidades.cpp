@@ -47,7 +47,7 @@ void Quarto::set_ramal(const Ramal &r) {ramal = r;}
 Ramal Quarto::get_ramal() const {return ramal;}
 
 // -------- Reserva --------
-Reserva::Reserva(const Codigo &cod, const Data &in, const Data &out, 
+Reserva::Reserva(const Codigo &cod, const Data &in, const Data &out,
                  const Pessoa &hosp, const Quarto &quart, const Dinheiro &valor)
     : codigo(cod), check_in(in), check_out(out), hospede(hosp), quarto(quart), valor_total(valor) {}
 

@@ -12,6 +12,7 @@ class Capacidade {
     private:
         int capacidade; /**< valor da capacidade. */
     public:
+        Capacidade();
         Capacidade(int v); /**< constrói com valor inicial. */
         void set_capacidade(int v); /**< define o valor da capacidade. */
         int get_capacidade() const; /**< retorna o valor da capacidade. */
@@ -26,6 +27,7 @@ class Cartao {
         string cartao; /**< número do cartão. */
         bool luhn(const string &num) const; /**< valida o número usando o algoritmo luhn (interno). */
     public:
+        Cartao();
         Cartao(string n); /**< constrói um cartão com o número fornecido. */
         void set_cartao(string n); /**< define o número do cartão. */
         string get_cartao() const; /**< retorna o número do cartão. */
@@ -45,6 +47,7 @@ class Senha {
         string senha; /**< senha */
         bool validar(const string &s) const; /**< verifica regras da senha */
     public:
+        Senha();
         Senha(string s); /**< construtor valida e armazena */
         void set_senha(string s); /**< define valor e valida */
         string get_senha() const; /**< retorna a senha */
@@ -59,6 +62,7 @@ class Email {
         string email; /**< email */
         bool validar(const string &s) const; /**< verifica regras do email */
     public:
+        Email();
         Email(string s); /**< construtor valida e armazena */
         void set_email(string s); /**< define valor e valida */
         string get_email() const; /**< retorna o email */
@@ -73,6 +77,7 @@ class Nome {
         string nome; /**< nome armazenado */
         void validar(const string &n) const; /**< valida regras do nome */
     public:
+        Nome();
         Nome(string n); /**< construtor valida e armazena */
         void set_nome(string n); /**< define o nome */
         string get_nome() const; /**< retortna o nome */
@@ -87,6 +92,7 @@ class Ramal{
         int ramal; /**< valor do ramal */
         void validar(int r) const; /**< valida intervalo do ramal */
     public:
+        Ramal();
         Ramal(int r); /**< construtor valida e armazena */
         void set_ramal(int r); /**< define o ramal */
         int get_ramal() const; /**< retorna o ramal */
@@ -101,6 +107,7 @@ class Numero {
         int numero; /**< valor do número */
         void validar(int n) const; /**< valida intervalo do número */
     public:
+        Numero();
         Numero(int n); /**< construtor valida e armazena */
         void set_numero(int n); /**< define o número */
         int get_numero() const; /**< retorna o número */
@@ -115,6 +122,7 @@ class Endereco {
         string endereco; /**< valor do endereço armazenado */
         void validar(const string &e) const; /**< método de validação interno */
     public:
+        Endereco();
         Endereco(string e); /**< construtor que valida e armazena */
         void set_endereco(string e); /**< define o endereço com validação */
         string get_endereco() const; /**< retorna o endereço */
@@ -131,6 +139,7 @@ class Data {
         void validar(const string &d) const; /**< método de validação interno */
         bool ehBissexto(int ano) const; /**< verifica se ano é bissexto */
     public:
+        Data();
         Data(string d); /**< construtor que valida e armazena */
         void set_data(string d); /**< define a data com validação */
         string get_data() const; /**< retorna a data */
@@ -145,6 +154,7 @@ class Telefone {
         string telefone; /**< número telefônico. */
         bool validar(string t); /**< verifica validade do telefone. */
     public:
+        Telefone();
         Telefone(string t); /**< constrói um número telefônico. */
         void set_telefone(string t); /**< define o telefone. */
         string get_telefone() const; /**< retorna o telefone. */
@@ -160,6 +170,7 @@ class Dinheiro {
         int dinheiro; /**< valor do dinheiro, em inteiros. */
         bool validar(string d); /**< verifica validade do valor. */
     public:
+        Dinheiro();
         Dinheiro(string d); /**< constrói o dinheiro. */
         void set_dinheiro(string d); /**< define o dinheiro. */
         int get_dinheiro() const; /**< retorna o dinheiro. */
@@ -175,6 +186,7 @@ class Codigo{
         string codigo; /**< código. */
         bool validar(string c); /**< verifica validade do código. */
     public:
+        Codigo();
         Codigo(string c); /**< constrói um código. */
         void set_codigo(string c); /**< define o código. */
         string get_codigo() const; /**< retorna o código. */

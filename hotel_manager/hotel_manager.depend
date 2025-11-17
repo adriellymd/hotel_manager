@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1763385894 source:/home/adriellymd/tp1/hotel_manager/apresentacao.cpp
+	<bits/stdc++.h>
+	"apresentacao.hpp"
+
+1763303988 /home/adriellymd/tp1/hotel_manager/apresentacao.hpp
+	"interfaces.hpp"
+	<iostream>
+	<string>
+
+1763309218 /home/adriellymd/tp1/hotel_manager/interfaces.hpp
+	"dominios.hpp"
+	"entidades.hpp"
+	<vector>
+
+1763311548 /home/adriellymd/tp1/hotel_manager/dominios.hpp
+	<bits/stdc++.h>
+
+1763302508 /home/adriellymd/tp1/hotel_manager/entidades.hpp
+	"dominios.hpp"
+
+1763385873 source:/home/adriellymd/tp1/hotel_manager/conteiners.cpp
+	<bits/stdc++.h>
+	"conteiners.hpp"
+
+1763304390 /home/adriellymd/tp1/hotel_manager/conteiners.hpp
+	"dominios.hpp"
+	"entidades.hpp"
+	"sqlite3.h"
+	<string>
+	<vector>
+
+1762345081 /home/adriellymd/tp1/hotel_manager/sqlite3.h
+	<stdarg.h>
+
+1763310984 source:/home/adriellymd/tp1/hotel_manager/dominios.cpp
+	<bits/stdc++.h>
+	"dominios.hpp"
+
+1763304010 source:/home/adriellymd/tp1/hotel_manager/entidades.cpp
+	<bits/stdc++.h>
+	"entidades.hpp"
+
+1763385880 source:/home/adriellymd/tp1/hotel_manager/main.cpp
+	<bits/stdc++.h>
+	"dominios.hpp"
+	"entidades.hpp"
+	"interfaces.hpp"
+	"conteiners.hpp"
+	"servicos.hpp"
+	"apresentacao.hpp"
+
+1763313201 /home/adriellymd/tp1/hotel_manager/servicos.hpp
+	"interfaces.hpp"
+	"conteiners.hpp"
+
+1763312794 source:/home/adriellymd/tp1/hotel_manager/servicos.cpp
+	"servicos.hpp"
+
